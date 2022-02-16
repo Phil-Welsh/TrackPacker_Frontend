@@ -5,8 +5,8 @@ import { Chart } from 'react-chartjs-2'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import './App.css';
-import BarChart from './components/BarChart/BarChart'
 import Navbar from './components/Navbar/Navbar'
+import { ClassNames } from '@emotion/react';
 
 const App = () => {
   return (
