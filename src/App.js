@@ -1,30 +1,27 @@
+import React from 'react'
+import routes from './config/routes';
+import { Chart as ChartJS } from 'chart.js/auto'
+import { Chart } from 'react-chartjs-2'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
 import './App.css';
-import PieChart from './components/PieChart/PieChart.js'
+import Navbar from './components/Navbar/Navbar'
+import { ClassNames } from '@emotion/react';
 
-const data = {
-  datasets: [{
-      data: [10, 20, 30]
-  }],
-
-  // These labels appear in the legend and in the tooltips when hovering different arcs
-  labels: [
-      'Red',
-      'Yellow',
-      'Blue'
-  ]
-};
-
-function App() {
-
+const App = () => {
   return (
-    <div className="App">
+    <div>
 
-      <h3>TrackPacker</h3>
+    < Navbar />
 
-      <PieChart chartData={data}/>
+      < Router >
+
+      { routes }
+
+      </ Router >
 
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
