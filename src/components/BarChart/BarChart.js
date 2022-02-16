@@ -5,27 +5,38 @@ import { Chart } from 'react-chartjs-2'
 
 import './BarChart.css'
 
-const BarChart = () => {
+const BarChart = (props) => {
+
+    let data = props
+
+    let chartDataIncome = null
+    let chartDataExpense = null
+
+    for (let i = 0; i < data.expenses.length; i++) {
+
+        chartDataExpense += data.expenses[i].amount
+    }
+
+    for (let i = 0; i < data.incomes.length; i++) {
+
+        chartDataIncome += data.incomes[i].amount
+    }
 
     return (
         <div className="budget-container">
             < Bar
                 data={{
-                    labels: ['Food', 'Travel', 'Rent', 'Shopping'],
+                    labels: ['Expenses', 'Income'],
                     datasets: [{
-                        label: 'Expenses',
-                        data: [65, 59, 80, 81],
+                        label: 'Expenses & Income',
+                        data: [chartDataExpense, chartDataIncome],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(255, 159, 64, 0.2)',
-                            'rgba(255, 205, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
                         ],
                         borderColor: [
                             'rgb(255, 99, 132)',
                             'rgb(255, 159, 64)',
-                            'rgb(255, 205, 86)',
-                            'rgb(75, 192, 192)',
                         ],
                         borderWidth: 1
                     }]}}
