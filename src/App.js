@@ -6,10 +6,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import './App.css';
 import BarChart from './components/BarChart/BarChart'
+import Navbar from './components/Navbar/Navbar'
 
 const App = () => {
   return (
     <div>
+
+    < Navbar />
 
       < Router >
 
