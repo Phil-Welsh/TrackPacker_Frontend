@@ -28,7 +28,7 @@ const BarChart = (props) => {
                 data={{
                     labels: ['Expenses', 'Income'],
                     datasets: [{
-                        label: 'Expenses & Income',
+                        label: 'Money Tracker',
                         data: [chartDataExpense, chartDataIncome],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',

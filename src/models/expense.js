@@ -12,6 +12,7 @@ class ExpenseModel {
     }
 
     static create = (expenseData) => {
+        console.log(expenseData)
         return fetch(`${url}/expenses`, {
             method: "POST",
             headers: {
