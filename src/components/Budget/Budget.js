@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
 import BarChart from '../BarChart/BarChart'
-// import Doughnut from '../Doughnut/Doughnut'
 import ExpenseModel from "../../models/expense";
 import IncomeModel from "../../models/income";
 
@@ -46,7 +45,6 @@ export default function Budget() {
                     </div>
                 )
             }
-            {/* < Doughnut /> */}
         </div>
     );
 }

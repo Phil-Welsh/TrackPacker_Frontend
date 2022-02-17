@@ -1,16 +1,11 @@
-.add-income-card {
-    display: relative;
-    float: right;
-}
-
-.add-income-card input {
+.add-goal-card input {
     padding: 3px;
     margin: 2px;
     border: 1.5px solid green;
     border-radius: 4px;
 }
 
-.add-income-card h3 {
+.add-goal-card h3 {
     text-align: center;
     font-family: Arial;
 }
