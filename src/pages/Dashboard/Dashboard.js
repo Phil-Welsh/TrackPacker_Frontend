@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
+import Typography from '@mui/material/Typography';
 
 import BarChart from '../../components/BarChart/BarChart'
 import Budget from '../../components/Budget/Budget'
 import Goal from '../../components/Goal/Goal'
 import GoalModel from '../../models/goal'
 import AddIncome from '../../components/AddIncome/AddIncome'
+import AddExpense from '../../components/AddExpense/AddExpense'
+import AddGoal from '../../components/AddGoal/AddGoal'
+
+import './Dashboard.css'
 
 export default function Dashboard() {
     const [goals, setGoals] = useState([])
@@ -34,18 +39,21 @@ export default function Dashboard() {
     }
 
     return (
-        <div>
+        <div className="dashboard">
             <Grid justify="space-between" container spacing={2} >
                 {goals.length ? (
                     <Grid item xs={6}>
-                        <h2>Goals</h2>
+                        <h2 id="headline">Goals</h2>
                         {generateGoals(goals)}
+                        < Paper >
+                            < AddGoal />
+                        </ Paper >
                     </Grid>
                 ) :
 
                     (
                         <div>
-                            Loading...
+                            < AddGoal />
                         </div>
                     )
                 }
@@ -53,6 +61,7 @@ export default function Dashboard() {
                     < Paper>
                         < Budget />
                         < AddIncome />
+                        < AddExpense />
                     </ Paper>
                 </Grid>
             </Grid>

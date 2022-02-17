@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import IncomeModel from "../../models/income";
+import ExpenseModel from "../../models/expense";
 
-import './AddIncome.css'
+import './AddExpense.css'
 
-function AddIncome(props) {
+function AddExpense(props) {
     const [category, setCategory] = useState("");
     const [amount, setAmount] = useState(null);
 
     function handleSubmit(event) {
         event.preventDefault();
 
-        IncomeModel.create({ category, amount }).then(
+        ExpenseModel.create({ category, amount }).then(
             (data) => {
                 window.location.reload();
             }
@@ -18,7 +18,7 @@ function AddIncome(props) {
     }
 
     return (
-        <div className="add-income-card">
+        <div className="add-expense-card">
             <form onSubmit={handleSubmit}>
                 <div className='form-input'>
                     <input
@@ -26,20 +26,20 @@ function AddIncome(props) {
                         name='category'
                         onChange={(e) => setCategory(e.target.value)}
                         value={category}
-                        placeholder='Income type'
-                        />
+                        placeholder='Expense type'
+                    />
                     <input
                         type='number'
                         name='amount'
                         onChange={(e) => setAmount(e.target.value)}
                         value={amount}
-                        placeholder='Income amount'
+                        placeholder='Expense amount'
                     />
                 </div>
-                <input type='submit' value='Save' id="submit-button"/>
+                <input type='submit' value='Save' id="submit-button" />
             </form>
         </div>
     );
 }
 
-export default AddIncome;
+export default AddExpense;

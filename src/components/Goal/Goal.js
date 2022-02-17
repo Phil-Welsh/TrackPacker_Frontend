@@ -7,15 +7,18 @@ import Grid from '@material-ui/core/Grid'
 import GoalModel from '../../models/goal'
 
 import './Goal.css'
+import { SettingsSystemDaydreamTwoTone } from '@material-ui/icons';
 
 export default function Goal(props) {
     const [goal, setGoal] = useState([])
+    const [endDate, setEndDate] = useState([])
 
     useEffect(
         function() {
             fetchGoals()
+            strShort()
         },
-        []
+        [goal]
     );
 
     function fetchGoals() {
@@ -24,10 +27,17 @@ export default function Goal(props) {
             });
         }
 
+    function strShort() {
+        if (goal.endDate) {
+            setEndDate(goal.endDate.slice(0, 10))
+        }
+    }
+
     return (
         <div className="goal-container">
-                <Typography variant="h6" component="h2"  style={{ flex: 1 }}>
-                    <p>{goal.category}</p>
+                <Typography variant="subtitle1" component="subtitle1"  style={{ flex: 1 }}>
+                    <p>{goal.category} - {endDate}
+                    </p>
                 </Typography>
             <Box sx={{ width: '100%' }}>
                 <LinearProgress variant="determinate" value={ (goal.currentAmt / goal.endAmt) * 100 } />
