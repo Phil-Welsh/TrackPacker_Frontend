@@ -95,7 +95,7 @@ function AddBudgetModal(props) {
         budget_type: type,
       };
       window
-        .fetch("https://bud-backendapi.herokuapp.com/budgets", {
+        .fetch("https://finfam.herokuapp.com/api/v1/incomes", {
           method: "POST",
           body: JSON.stringify(budgetData),
           headers: { "Content-Type": "application/json" },
